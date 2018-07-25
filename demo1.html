@@ -23,6 +23,7 @@
             width: -webkit-fit-content;
             width: -moz-fit-content;
             margin: 0 auto;
+            
         }
         .container .underline-container{
             display: inline-block;
@@ -46,7 +47,6 @@
             background-color: #fff;
             padding: 2px 15px 2px 15px;
             margin-top: 50px;
-            transition: all 0.2s;
         }
     </style>
 </head>
@@ -66,22 +66,15 @@
         btn.addEventListener('click',() =>{
             if(flag == false) {
                 underline.style.width = '100%';
+                word.style.color = 'blue';
             }
             else {
                 underline.style.width = 0;
+                word.style.color = '';
             }
             flag = !flag;
         });
-        //当下划线过渡完成时，为字体添加蓝色样式
-        underline.addEventListener('transitionend',() => {
-            if(flag) {
-                word.style.color = 'blue';
-            }
-            else{
-                word.style.color = '';
-            }
-        })
-
+    
     </script>
 </body>
 </html>
