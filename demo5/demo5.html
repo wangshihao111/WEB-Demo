@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫酷slider</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .slider{
+            position: relative;
+            top: 20px;
+            width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .thumbnail{
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            width: 100%;
+            text-align: center;
+            z-index: 3;
+        }
+        .thumbnail .item{
+            display: inline-block;
+            width: 150px;
+            height: 100px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .thumbnail .item{
+            filter: brightness(.5);
+        }
+        .thumbnail .item:hover{
+            filter: brightness(1);
+        }
+        .pic div {
+            position: absolute;
+            width: 1000px;
+            height: 500px;
+            z-index: 0;
+        }
+        .pic div img{
+            width: 100%;
+            height: 500px;
+        }
+        .pic div:target{
+            z-index: 1;
+        }
+        .pic div:not(:target){
+            z-index: 0;
+        }
+        .pic #item1:target img{
+            animation: item1 .5s ease-out ;
+            -webkit-animation: item1 .5s ease-out;
+            -moz-animation: item1 .5s ease-out;
+            -o-animation: item1 .5s ease-out;
+        }
+        .pic #item2:target img{
+            animation: item2 .5s ease-out;
+            -webkit-animation: item2 .5s ease-out;
+            -moz-animation: item2 .5s ease-out;
+            -o-animation: item2 .5s ease-out;
+        }
+        .pic #item3:target img{
+            animation: item3 .5s ease-in;
+            -webkit-animation: item3 .5s ease-in;
+            -moz-animation: item3 .5s ease-in;
+            -o-animation: item3 .5s ease-in;
+        }
+        .pic #item4:target img{
+            animation: item4 .5s ease-out;
+            -webkit-animation: item4 .5s ease-out;
+            -moz-animation: item4 .5s ease-out;
+            -o-animation: item4 .5s ease-out;
+        }
+        .pic #item5:target img{
+            animation: item5 .5s ease-in-out;
+            -webkit-animation: item5 .5s ease-in-out;
+            -moz-animation: item5 .5s ease-in-out;
+            -o-animation: item5 .5s ease-in-out;
+        }
+        @keyframes item1{0%{transform: translateX(-500px);}100%{transform: translateX(0);}}
+        @-o-keyframes item1{0%{transform: translateX(-500px);}100%{transform: translateX(0);}}
+        @-webkit-keyframes item1{0%{transform: translateX(-500px);}100%{transform: translateX(0);}}
+        @-moz-keyframes item1{0%{transform: translateX(-500px);}100%{transform: translateX(0);}}
+
+        @keyframes item2{0%{transform: translateY(350px);}100%{transform: translateY(0);}}
+        @-o-keyframes item2{0%{transform: translateY(350px);}100%{transform: translateY(0);}}
+        @-moz-keyframes item2{0%{transform: translateY(350px);}100%{transform: translateY(0);}}
+        @-moz-keyframes item2{0%{transform: translateY(350px);}100%{transform: translateY(0);}}
+
+        @keyframes item3{0%{transform: scale(.1);}100%{transform: scale(1);}}
+        @-o-keyframes item3{0%{transform: scale(.1);}100%{transform: scale(1);}}
+        @-webkit-keyframes item3{0%{transform: scale(.1);}100%{transform: scale(1);}}
+        @-moz-keyframes item3{0%{transform: scale(.1);}100%{transform: scale(1);}}
+
+        @keyframes item4{0%{transform: scale(2);}100%{transform: scale(1);}}
+        @-o-keyframes item4{0%{transform: scale(2);}100%{transform: scale(1);}}
+        @-moz-keyframes item4{0%{transform: scale(2);}100%{transform: scale(1);}}
+        @-webkit-keyframes item4{0%{transform: scale(2);}100%{transform: scale(1);}}
+
+        @keyframes item5{0%{transform: rotate(-360deg) scale(.1);}100%{transform: rotate(0) scale(1);}}
+        @-o-keyframes item5{0%{transform: rotate(-360deg) scale(.1);}100%{transform: rotate(0) scale(1);}}
+        @-moz-keyframes item5{0%{transform: rotate(-360deg) scale(.1);}100%{transform: rotate(0) scale(1);}}
+        @-webkit-keyframes item5{0%{transform: rotate(-360deg) scale(.1);}100%{transform: rotate(0) scale(1);}}
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <!-- 缩略图放在这里 -->
+        <div class="thumbnail">
+            <a href="#item1">
+                <img src="1.jpg" class="item">
+            </a>
+            <a href="#item2">
+                <img src="2.jpg" class="item">
+            </a>
+            <a href="#item3">
+                <img src="3.jpg" class="item">
+            </a>
+            <a href="#item4">
+                <img src="4.jpg" class="item">
+            </a>
+            <a href="#item5">
+                <img src="5.jpg" class="item">
+            </a>
+        </div>
+        <!-- 放大图 -->
+        <div class="pic">
+                <div  id="item1">
+                    <img src="1.jpg" class="item1">
+                </div>
+                <div  id="item2">
+                    <img src="2.jpg" class="item2">
+                </div>
+                <div  id="item3">
+                    <img src="3.jpg" class="item3">
+                </div>
+                <div  id="item4">
+                    <img src="4.jpg" class="item4">
+                </div>
+                <div  id="item5">
+                    <img src="5.jpg" class="item5">
+                </div>
+        </div>
+    </div>
+</body>
+</html>
