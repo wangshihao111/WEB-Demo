@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo4</title>
+    <style>
+        .container{
+            position: relative;
+            padding-top: 50px;
+            width: 1000px;
+            height: 800px;
+            margin: 0 auto;
+        }
+        .wraper{
+            position: absolute;
+            top: 50px;
+            left: 400px;
+            width: 250px;
+            height: 325px;
+            perspective: 500px;
+        }
+        .container .back,
+        .container .top{
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: 1s;
+            backface-visibility: hidden;
+        }
+        
+        .container .back{
+            transform: rotateY(180deg);
+            backface-visibility: visible;
+        }
+        .wraper:hover .back{
+            transform: rotateY(360deg);
+        }
+        .wraper:hover .top{
+            transform: rotateY(180deg);
+        }
+        
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div class="wraper">
+            <img src="2.jpg" alt="top of the card" class="back">
+            <img src="1.jpg" alt="back of the card" class="top"> 
+        </div>
+    </figure>
+</body>
+</html>
