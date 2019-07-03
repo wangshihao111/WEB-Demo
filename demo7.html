@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)http://jadyoap.bj.bcebos.com/ife%2Fmission7.html?email=&password=&submit= -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>使用 animate.css 制作流畅交互动效</title>
+        <link rel="stylesheet" href="https://unpkg.com/animate.css@3.5.2/animate.min.css">
+        <style type="text/css">
+            html {
+                font-size: 62.5%;
+                font-family: 'Open Sans', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            }
+            body {
+                font-size: 1.8em;
+                line-height: 3;
+                background-color: #eeeeee;
+            }
+            h3 {
+                font-size: 1.8em;
+                margin-bottom: 3rem;
+                line-height: 1.5;
+                font-weight: 800;
+            }
+            p {
+                margin-bottom: 1.5rem;
+            }
+            .site-container {
+                max-width: 320px;
+                margin: 10px auto;
+                padding-left: 0.6em;
+                padding-right: 0.6em;
+                padding-top: 3%;
+                padding-bottom: 3%;
+            }
+            @media screen and (min-width: 60.063em) {
+                .site-container {
+                    max-width: 400px;
+                }
+            }
+            .card {
+                position: relative;
+                overflow: hidden;
+                background-color: white;
+                box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24), 0 1px 18px 0 rgba(0,0,0,0.12);
+                border-radius: 2px;
+                padding: 1em 1.5em;
+            }
+            .form__wrapper {
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+                display: inline-block;
+                margin-bottom: 1.6rem;
+                width: 100%;
+                vertical-align: top;
+            }
+            .form__wrapper__submit {
+                padding: 1.6rem 0;
+            }
+            .form__input {
+                display: block;
+                position: relative;
+                margin-top: 1em;
+                padding: 0.84em 0;
+                width: 100%;
+                box-sizing: border-box;
+                color: #444;
+                font-size: 1.6rem;
+                outline: 0;
+                border: none;
+                border-bottom: solid 1px #ddd;
+            }
+            .form__input:focus {
+                background-position: 0 0;
+                color: #444;
+            }
+            .form__label {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 0;
+                width: 100%;
+                height: calc(99%);
+                text-align: left;
+                pointer-events: none;
+                color: #999;
+            }
+            .form__label__content {
+                display: block;
+                position: absolute;
+            }
+            .form__input:focus ~ .form__label .form__label__content,
+            .form__filled .form__label__content {
+                animation: label_ani .3s ease-in ;
+                animation-fill-mode: forwards;
+            }
+            .form__wrapper .underline{
+                display: block;
+                visibility: hidden;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width:100%;
+                height: 2px;
+                z-index: 15;
+                background-color:  blue;
+            }
+            /*
+            .form__input:not(:focus) + .underline{
+                visibility: visible;
+                animation: input_bottom 1s ease forwards;
+            }*/
+            @keyframes input_bottom{100%{width: 0;}}
+            @keyframes label_ani{
+                0%{
+                    bottom: 0;
+                }
+                25%{
+                    font-size: 1em;
+                }
+                100%{
+                    bottom: 20px;
+                    font-size: .9em;
+                }
+            }
+            @-o-keyframes label_ani{
+                0%{
+                    bottom: 0;
+                }
+                25%{
+                    font-size: 1em;
+                }
+                100%{
+                    bottom: 20px;
+                    font-size: .9em;
+                }
+            }
+            @-moz-keyframes label_ani{
+                0%{
+                    bottom: 0;
+                }
+                25%{
+                    font-size: 1em;
+                }
+                100%{
+                    bottom: 20px;
+                    font-size: .9em;
+                }
+            }
+            @-webkit-keyframes label_ani{
+                0%{
+                    bottom: 0;
+                }
+                25%{
+                    font-size: 1em;
+                }
+                100%{
+                    bottom: 20px;
+                    font-size: .9em;
+                }
+            }
+            .btn {
+                width: 100%;
+                display: inline-block;
+                padding: 0.7em 1.5em;
+                border-radius: 2px;
+                background-color: #2196f3;
+                color: #fff;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                font-family: inherit;
+                font-weight: 400;
+                font-size: 1.6rem;
+                box-shadow: 0 1px 3px 0 rgba(3,30,51,0.24), 0 1px 2px 0 rgba(3,30,51,0.12);
+                transition: all 0.2s ease;
+            }
+            .btn:focus,
+            .btn:hover {
+                background-color: #0d8aee;
+            }
+            /*按钮动画*/
+            .btn__ani{
+                animation: pulse .8s ease-in-out infinite;
+                -moz-animation:  pulse .8s ease-in-out infinite;
+                -webkit-animation:  pulse .8s ease-in-out infinite;
+                -o-animation:  pulse .8s ease-in-out infinite;
+            }
+        </style>
+    </head><style type="text/css" id="75848147339"></style>
+    <body style="">
+        <section class="site-container">
+            <section class="card">
+                <h3>Login</h3>
+                <form>
+                    <div class="form__wrapper" data-wow-delay="0.5s">
+                        <input type="email" class="form__input" id="email" name="email">
+                        <span class="underline"></span>
+                        <label class="form__label" for="email">
+                        <span class="form__label__content">Email</span>
+                        </label>
+                    </div>
+                    <div class="form__wrapper" data-wow-delay="0.6s">
+                        <input type="password" class="form__input" id="password" name="password">
+                        <span class="underline"></span>
+                        <label class="form__label" for="password">
+                        <span class="form__label__content">Password</span>
+                        </label>
+                    </div>
+                    <div class="form__wrapper__submit pulse infinite" data-wow-delay="0.7s">
+                        <div class="form__input__submit">
+                            <button type="submit" name="submit" class="btn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </section>
+    
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function() { 
+            //获取表单元素
+            var input_status = $(".form__input");
+            //为表单添加change事件，若表单内容改变且不为空，则添加form__filled类
+            input_status.on('change',function(){
+                if(input_status.eq(0).val()||input_status.eq(0).val()!=''){
+                   $(".form__wrapper").eq(0).addClass('form__filled');
+                }
+                else $(".form__wrapper").eq(0).removeClass('form__filled');
+
+                if(input_status.eq(1).val()||input_status.eq(1).val()!=''){
+                   $(".form__wrapper").eq(1).addClass('form__filled');
+                }
+                else $(".form__wrapper").eq(1).removeClass('form__filled');
+            })
+            //添加失去焦点事件，若表单失去焦点，则判断是否都填有内容，若是 则为btn添加抖动样式
+            .on('blur',function(event,index){
+                if(input_status.eq(0).val()!='' && input_status.eq(0).val() && input_status.eq(1).val()&&input_status.eq(1).val()!=''){
+                    $(".form__input__submit").addClass('btn__ani');
+                }
+                else{
+                    $(".form__input__submit").removeClass('btn__ani');
+                }
+
+                //输入框下划线动画
+                $(this).next().css('visibility','visible').animate({width:"0"},function(){
+                    $(this).css("visibility",'hidden').css('width','100%');
+                    console.log('111');
+                })
+            })
+            //当输入框获得焦点时，添加蓝色下划线
+            .on('focus',function () {
+                $(this).next().css('visibility','visible');
+            })
+
+        })
+    </script>
+</body></html>

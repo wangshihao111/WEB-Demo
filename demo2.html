@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo2</title>
+    <style>
+        .container{
+            width: 677px;
+            height: 237px;
+            margin: 0 auto; 
+            padding-top: 27px;          
+        }
+        [class*='box']{
+            display: inline-block;
+            width: 60px;
+            height: 68px;
+            text-align: center;
+            margin-left: 27px;
+            line-height: 68px;
+            font-size: 18px;
+            background-color: #f7f6f6;
+            border:1px solid #ececec;
+        }
+        .box1{
+            transform:skewX(30deg);
+        }
+        .box2{
+            transform: scaleX(.5);
+        }
+        .box3{
+            transform: rotate(45deg);
+        }
+        .box4{
+            transform: translate(10px,20px);
+        }
+        .box5{
+            transform:translate(10px,20px) skewX(30deg) scaleX(.5) rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box0">box0</div>
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+    </div>
+</body>
+</html>
